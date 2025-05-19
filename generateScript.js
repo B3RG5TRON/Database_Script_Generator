@@ -21,7 +21,7 @@ mkdirSync("./temp", { recursive: true });
 
 // Gera para empresas BR
 let outputBR = "";
-outputBR += "USE klassmatt_mercadolibre;\n\nBEGIN TRAN;\n\n"; // Informe o banco de dados
+outputBR += "USE empresas_desejada;\n\nBEGIN TRAN;\n\n"; // Informe o banco de dados
 for (const id_empresa_expansao of id_empresas_br) {
   for (const id_empresa_origem of id_empresas_br) {
     if (id_empresa_expansao === id_empresa_origem) continue;
@@ -49,7 +49,7 @@ writeFileSync("./temp/inserts_empresas_expansao_automatica_BR.sql", outputBR);
 
 // Gera para empresas ES
 let outputES = "";
-outputES += "USE klassmatt_mercadolibre;\n\nBEGIN TRAN;\n\n"; // Informe o banco de dados
+outputES += "USE empresas_desejada;\n\nBEGIN TRAN;\n\n"; // Informe o banco de dados
 for (const id_empresa_expansao of id_empresas_es) {
   for (const id_empresa_origem of id_empresas_es) {
     if (id_empresa_expansao === id_empresa_origem) continue;
